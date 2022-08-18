@@ -17,7 +17,9 @@
           <%}%>
            -->
       <% list.forEach(function(item,idx){ %>
-      <li><a href=""><%= item.subject %></a></li>
+      <!-- <li><a href="/detail/1"><%= item.subject %></a></li> -->
+      <li><a href="/detail/<%= item.no %>"><%= item.subject %></a></li>
+      <!-- <li><a href="/detail/1"><%= item.subject %></a></li> -->
 
       <% }) %>
       <!-- <%%> 기본, <%= %>값을출력할때 -->
