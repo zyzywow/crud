@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>나는 list ejs 입니다.</h1>
+    <h2><%= title %></h2>
+    <ul>
+      <!-- <% for(let i=0;i<list.length;i++) { %>
+        <% list.forEach(function() {})%>
+          <li><%= list[i].subject%></li>
+
+          <%}%>
+           -->
+      <% list.forEach(function(item,idx){ %>
+      <li><a href=""><%= item.subject %></a></li>
+
+      <% }) %>
+      <!-- <%%> 기본, <%= %>값을출력할때 -->
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>write</title>
+  </head>
+  <body>
+    <!-- 데이터를 보낼때 post로 보내는 방법 2가지 -->
+    <!-- 1. ajax, 2. form태그 -->
+    <form action="/add" method="POST">
+      <input type="text" name="subject" id="subject" />
+      <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+      <!-- form에서 데이터보낼때는 name이중요! -->
+      <button>send</button>
+    </form>
+    <script>
+      // $.ajax({ url: "/add", method: "post" });
+    </script>
+  </body>
+</html>
