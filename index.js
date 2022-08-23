@@ -17,7 +17,7 @@ MongoClient.connect(process.env.MONGO_URL, { useUnifiedTopology: true }, (err, c
 }); // db연결 끝---------------------
 
 app.use(express.urlencoded({ extended: false }));
-// post방식으로 가져온값 출력하려면 위 내용 !
+// post방식으로 가져온값 body로 받아서 출력하려면 위 내용 !
 app.set("view engine", "ejs");
 
 app.set("port", process.env.PORT || 8099);
@@ -57,6 +57,7 @@ app.post("/add", (req, res) => {
         }
         console.log("잘 들어갔음.");
         res.send(`<script>alert("글이 입력되었습니다."); location.href="/list"</script>`);
+        // 브라우저에서 사용되는 스크립트내용은 node에선 사용할수 없어서 위 처럼 쓰거나 해야함.
       });
     });
   });
@@ -64,8 +65,7 @@ app.post("/add", (req, res) => {
   // 1. db접속
   // 2. 받은 데이터 밀어넣기
   // res.sendFile(path.join(__dirname, "public/html/result.html"));
-  // res.send(`<script>alert("글이 입력되었습니다."); location.href="/list"</script>`);
-  // 브라우저에서 사용되는 스크립트내용은 node에선 사용할수 없어서 위 처럼 쓰거나 해야함.
+
   // res첫번째응답하면 그 밑의 res들은 실행되지않음. res2번못씀,
   // res.redirect("/list");
   // redirect->글 내용입력 후 중간페이지 거치지않고 글내용업데이트와동시에 바로이동하기
